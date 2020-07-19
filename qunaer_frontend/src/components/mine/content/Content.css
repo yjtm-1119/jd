@@ -1,0 +1,25 @@
+.wrapper2{
+  margin-top: 30px;
+  height: 1000px;
+  background-color: #f5f5f5;
+}
+.tab1{
+  display: flex;
+  height: 80px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+}
+.tab1 div{
+  flex:1;
+}
+.tab1 div img{
+  width: 20px;
+  height: 20px;
+  padding-left: 33px;
+}
+.tab1 div p{
+  text-align: center;
+}
