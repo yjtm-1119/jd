@@ -19,7 +19,48 @@
   width: 20px;
   height: 20px;
   padding-left: 33px;
+  padding-top: 10px;
 }
 .tab1 div p{
   text-align: center;
+}
+.tab2{
+  display: flex;
+  margin:12px 10px 0 10px;
+  height: 80px;
+  border-radius: 15px;
+  color: #666666;
+  background-color: #FFFFFF;
+}
+.tab2 .tab2_left{
+  display: flex;
+  width: 80%;
+  /* justify-content: space-between; */
+  font-size: 12px;
+}
+.tab2 .tab2_left div{
+  flex:1;
+
+}
+.tab2 .tab2_left div div{
+  font-weight: bold;
+  text-align: center;
+  padding-top: 25%;
+}
+.tab2 .tab2_left div p {
+  text-align: center;
+}
+.tab2 .tab2_right{
+  width: 20%;
+  font-size: 12px;
+}
+.tab2 .tab2_right img{
+  width: 20px;
+  height: 20px;
+  padding-left: 22px;
+  padding-top: 16px;
+}
+.tab2 .tab2_right div{
+  text-align: center;
+  margin-top: 7px;
 }
