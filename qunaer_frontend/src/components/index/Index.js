@@ -1,10 +1,14 @@
 import React from 'react';
-function Index(){
-    return ( 
-      <div>
-        首页
-      </div>
-     );
+import Header from './header/Header';
+import Content from './content/Content';
+import './Index.css';
+function Index() {
+  return (
+    <div >
+      <Header />
+      <Content />
+    </div>
+  );
 }
- 
+
 export default Index;
