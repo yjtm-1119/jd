@@ -1,28 +1,33 @@
 import React from 'react';
-import Jd from './iconfont/京东.png';
-import Calendar from './iconfont/日历.png';
-import Message from './iconfont/消息.png';
-import Sweep from './iconfont/扫.png';
-import Search from './iconfont/搜索.png';
-import Camera from './iconfont/相机.png'
-
 import './Header.css';
+import AdvSwiper from '../swiper/Swiper';
+const titles = ['首页', '手机', "电脑", "运动", "生鲜", "童装", "女装"]
 function Header() {
   return (
     <div className="index_header">
-      <div>
-        <img src={Jd} alt="" />
-        <img src={Calendar} alt="" />
-        <img src={Message} alt="" />
-        <img src={Sweep} alt="" />
+      <div className="index_header_top">
+        <span className="iconfont">&#xe600;</span>
+        <span className="iconfont">&#xe63e;</span>
+        <span className="iconfont">&#xe601;</span>
+        <span className="iconfont">&#xe635;</span>
       </div>
       <div className="index_header_child2">
-        <img src={Search} alt="" className="index_header_img1"/>
-        <input type="text" className="index_header_search" placeholder="小米手机" />
-        <img src={Camera} alt="" className="index_header_img2"/>
+        <input type="text" className="index_header_child2_search" placeholder="美的京东超级手机日" />
+        <span className="iconfont iconfont1">&#xe603;</span>
+        <span className="iconfont iconfont2">&#xe633;</span>
       </div>
-
+      <nav className="index_header_nav">
+        {titles.map((item, i) => {
+          return (
+            <span key={i} className="index_header_nav_title">
+              {item}
+            </span>
+          )
+        })}
+      </nav>
+      <AdvSwiper />
     </div>
+
   );
 }
 

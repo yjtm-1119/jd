@@ -1,3 +1,5 @@
-module.export = {
-  'GET /rest/cities':require('./rest/cities.json')
+module.exports = {
+  'GET /sort/supermarket': require('./sort/supermarket.json'),
+  'GET /sort/recommend': require('./sort/recommend.json')
+
 }

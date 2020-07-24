@@ -1,0 +1,7 @@
+.swiper-container{
+  width: 340px;
+  height: 150px;
+  margin-top: 10px;
+  background-color: red;
+  border-radius: 10px;
+}

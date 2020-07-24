@@ -2,27 +2,27 @@ import React from 'react';
 import './Header.css';
 function Header() {
   return (
-    <div className="wrapper1">
-      <div className="header">
-        <div className="header_avatar">
+    <div className="mine_wrapper1">
+      <div className="mine_header">
+        <div className="mine_header_avatar">
           <img src="https://img11.360buyimg.com/jdphoto/s120x120_jfs/t21160/90/706848746/2813/d1060df5/5b163ef9N4a3d7aa6.png" alt="" />
         </div>
-        <div className="header_info">
-          <div className="header_info_name">
+        <div className="mine_header_info">
+          <div className="mine_header_info_name">
             夜尽天明_1119
           </div>
-          <div className="header_info_more">
+          <div className="mine_header_info_more">
             <span>京享值544&gt;</span>
             <span>小白成长分4040&gt;</span>
             <span>家庭号&gt;</span>
           </div>
         </div>
-        <div className="header_set">
+        <div className="mine_header_set">
           <img src="https://img11.360buyimg.com/jdphoto/s26x26_jfs/t14701/329/1603887827/338/bdda401f/5a53570bN44d2baad.png" alt="" />
           <span>设置</span>
         </div>
       </div>
-      <div className="details" >
+      <div className="mine_details" >
         <div>
           <p>6</p>
           <span>商品关注</span>
@@ -40,7 +40,7 @@ function Header() {
           <span>浏览记录</span>
         </div>
       </div>
-      <div className="vip">
+      <div className="mine_vip">
         <div>
           <span>plus会员</span>
           <p>免费试用30天 &gt;</p>

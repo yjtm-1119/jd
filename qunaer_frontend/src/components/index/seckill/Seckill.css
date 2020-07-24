@@ -1,0 +1,53 @@
+.seckill{
+  height: 178px;
+  margin-top: 10px;
+  background-color:#FFFFFF;
+  margin: 10px 10px 0 10px;
+  border-radius: 10px;
+}
+.seckill .seckill_head{
+  position: relative;
+  height: 35px;
+  /* background-color:red; */
+}
+.seckill .seckill_head .seckill_head_title{
+  position: absolute;
+  height: 100%;
+  width: 80px;
+  font-size: 15px;
+  line-height: 35px;
+  font-weight: 700;
+  text-align: center;
+}
+.seckill .seckill_head .seckill_head_link{
+  height: 100%;
+  position: absolute;
+  width: 100px;
+  color: black;
+  font-size: 15px;
+  line-height: 35px;
+  font-weight: 700;
+  text-align: center;
+  right: 0;
+}
+.seckill .seckill_footer{
+  display: flex;
+  height: 150px;
+
+}
+.seckill .seckill_footer .seckill_footer_content{
+  flex: 1;
+  text-align: center;
+}
+.seckill .seckill_footer .seckill_footer_content img{
+  width: 100%;
+}
+.seckill .seckill_footer .seckill_footer_content p{
+  font-size: 18px;
+  color: #F2270C;
+  font-weight: 700;
+  margin: 5px 0;
+}
+.seckill .seckill_footer .seckill_footer_content s{
+  color: #999999;
+}
