@@ -1,0 +1,11 @@
+.cart_goodscontent{
+  position: relative;
+  height: 50px;
+  background-color: #F82382;
+}
+.cart_goodscontent .iconfont{
+  position: absolute;
+  font-size: 38px;
+  top: 7px;
+  left: 10px;
+}

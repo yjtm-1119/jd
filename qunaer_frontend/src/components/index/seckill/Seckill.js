@@ -32,8 +32,9 @@ function Seckill() {
     <div className="seckill">
       <div className="seckill_head">
         <div className="seckill_head_title">京东秒杀</div>
-        <a href="javascript:;" className="seckill_head_link">更多秒杀
-        <i className="iconfont">&#xe6ad;</i></a>
+        <a href="www.baidu.com" className="seckill_head_link">更多秒杀
+        <i className="iconfont">&#xe6ad;</i>
+        </a>
       </div>
       <div className="seckill_footer">
         {seckillData.map(item => {

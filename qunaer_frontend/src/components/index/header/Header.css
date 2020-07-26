@@ -1,8 +1,10 @@
 .index_header{
+  position: fixed;
   width: 100%;
-  height: 180px;
+  height: 100px;
   background-color: #35A8EB;
-  border-radius: 0px 0px 130px 70px;
+  z-index: 999;
+  /* border-radius: 0px 0px 130px 70px; */
 }
 .index_header .index_header_top{
   position: relative;

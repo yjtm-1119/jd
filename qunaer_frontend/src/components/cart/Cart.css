@@ -1,0 +1,17 @@
+.cart_details{
+  height: 375px;
+  width: 375px;
+  overflow: scroll; 
+  position: relative;
+}
+.cart_details .cart{
+  height: 375px;
+  width: 375px;
+}
+/* .cart_details .swiper-pagination3{
+  height: 20px;
+  position: absolute;
+  top: 200px;
+  right: 100px;
+  background-color: red;
+} */

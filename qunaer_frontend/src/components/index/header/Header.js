@@ -25,7 +25,7 @@ function Header() {
           )
         })}
       </nav>
-      <AdvSwiper />
+      
     </div>
 
   );

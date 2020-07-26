@@ -40,7 +40,7 @@ var swiperPics = [
 ]
 function AdvSwiper() {
   useEffect(() => {
-    new Swiper('.swiper-container', {
+    new Swiper('.banner', {
       autoplay: {//自动切换
         delay: 2000,
         stopOnLastSlide: false,
@@ -49,22 +49,23 @@ function AdvSwiper() {
       pagination: {//分页器
         el: '.swiper-pagination',
         clickable: true,
+        dynamicBullets: true,
       },
       loop: true,//循环
     });
   }, [])
   return (
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
+    <div className="swiper-container banner">
+      <div className="swiper-wrapper">
         {swiperPics.map((item, i) => {
           return (
-            <div class="swiper-slide" key={item.key}>
+            <div className="swiper-slide" key={item.key}>
               <img src={item.url} alt="" />
             </div>
           )
         })}
       </div>
-      <div class="swiper-pagination"></div>
+      <div className="swiper-pagination"></div>
     </div>
   )
 }

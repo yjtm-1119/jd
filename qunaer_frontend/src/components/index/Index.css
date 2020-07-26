@@ -1,0 +1,6 @@
+.index_page{
+  overflow: scroll;
+}
+.index_page .index_page_body{
+  height: 1000px;
+}

@@ -1,0 +1,32 @@
+.goodsHeader{
+  height: 40px;
+  width: 100%;
+  z-index: 999;
+  position: fixed;
+}
+.goodsHeader .iconfont{
+  font-size: 28px;
+}
+.goodsHeader .iconfont1{
+  position: absolute;
+  left: 10px;
+  top: 5px;
+}
+.goodsHeader .iconfont2{
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+.goodsHeader .jd_link{
+  position: absolute;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 12px;
+  width: 110px;
+  right: 0;
+  top: 90px;
+  color: #FFF;
+  border-radius: 15px 0 0 15px;
+  background-color: #E93B3D;
+}

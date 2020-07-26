@@ -8,7 +8,7 @@ function Supermarket(props) {
       .then(data => data.json())
       .then(data => {
         setlist(data.supermarket)
-        console.log(data)
+        // console.log(data)
       })
   }, [])
   return (
