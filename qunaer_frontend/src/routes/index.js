@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from "react";
 import { Redirect } from 'react-router-dom';
 import Cart from '../components/cart/Cart';
 import Find from '../components/find/Find';
@@ -6,27 +6,41 @@ import Index from '../components/index/Index';
 import Mine from '../components/mine/Mine';
 import Sort from '../components/sort/Sort';
 import TabLayout from '../layouts/TabLayout';
+import BlankLayout from '../layouts/BlankLayout';
 import Supermarket1 from '../components/index/content/routes/Supermaeket1';
 
+const SuspenseComponent = Component => props => {
+  return (
+    <Suspense fallback={null}>
+      <Component {...props}></Component>
+    </Suspense>
+  )
+}
+export default [{
+  component: BlankLayout,
+  routes: [
+    {
+      path: '/index/supermarket',
+      component: SuspenseComponent(Supermarket1),
+    },
+    {
+      path: '/',
+      component: TabLayout,
+      routes: [
+        {
+          path: '/',
+          exact: true,
+          render: () => <Redirect to={"/Index"} />
+        },
 
-export default [
-  {
-    path: '/',
-    component: TabLayout,
-    routes: [
-      {
-        path: '/',
-        exact: true,
-        render: () => <Redirect to={"/Index"} />
-      },
-      {
-        path: '/index',
-        component: Index,
-        routes: [
-          {
-            path: '/index/supermarket',
-            component: Supermarket1,
-          },
+        {
+          path: '/index',
+          component: SuspenseComponent(Index),
+          // routes: [
+          //   {
+          //     path: '/index/supermarket',
+          //     component: Supermarket1,
+          //   },
           //   {
           //     path: '/index/electric',
           //     component: Electric,
@@ -63,24 +77,26 @@ export default [
           //     path: '/index/member',
           //     component: Member,
           //   },
-        ]
-      },
-      {
-        path: '/find',
-        component: Find
-      },
-      {
-        path: '/cart',
-        component: Cart
-      },
-      {
-        path: '/mine',
-        component: Mine
-      },
-      {
-        path: '/sort',
-        component: Sort,
-      },
-    ]
-  }
-]
+          // ]
+        },
+        {
+          path: '/find',
+          component: SuspenseComponent(Find)
+        },
+        {
+          path: '/cart',
+          component: SuspenseComponent(Cart)
+        },
+        {
+          path: '/mine',
+          component: SuspenseComponent(Mine)
+        },
+        {
+          path: '/sort',
+          component: SuspenseComponent(Sort),
+        }
+      ]
+    },
+
+  ]
+}]

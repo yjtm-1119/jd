@@ -23,6 +23,8 @@
 }
 .mine_tab1 div p{
   text-align: center;
+  height:30px;
+  line-height:30px;
 }
 .mine_tab2{
   display: flex;
@@ -40,7 +42,6 @@
 }
 .mine_tab2 .mine_tab2_left div{
   flex:1;
-
 }
 .mine_tab2 .mine_tab2_left div div{
   font-size: 18px;
@@ -50,6 +51,8 @@
 }
 .mine_tab2 .mine_tab2_left div p {
   text-align: center;
+  height: 30px;
+  line-height: 30px;
 }
 .mine_tab2 .mine_tab2_right{
   width: 20%;
@@ -100,16 +103,16 @@
   justify-content: space-between;
 }
 .mine_tab3 .mine_tab3_footer div img{
-  margin: auto;
+  margin: 0 auto;
   width: 50%;
 }
 .mine_tab3 .mine_tab3_footer div :nth-child(2){
-  margin-top: -5px;
+  margin-top: -8px;
   text-align: center;
   font-size: 14px;
 }
 .mine_tab3 .mine_tab3_footer div :nth-child(3){
-  margin-top: -14px;
+  margin-bottom: 10px;
   text-align: center;
   font-size: 10px;
   color: #666666;
@@ -151,16 +154,18 @@
   justify-content: space-between;
 }
 .mine_tab4 .mine_tab4_footer div img{
-  margin: auto;
+  margin: 0 auto;
   width: 50%;
 }
 .mine_tab4 .mine_tab4_footer div :nth-child(2){
-  margin-top: -5px;
+  /* margin-bottom: 30px; */
+  height: 20px;
+  line-height: 20px;
   text-align: center;
   font-size: 13px;
 }
 .mine_tab4 .mine_tab4_footer div :nth-child(3){
-  margin-top: -14px;
+  margin-bottom: 10px;
   text-align: center;
   font-size: 10px;
   color: #666666;

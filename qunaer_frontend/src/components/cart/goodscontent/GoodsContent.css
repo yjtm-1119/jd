@@ -1,11 +1,70 @@
 .cart_goodscontent{
   position: relative;
   height: 50px;
-  background-color: #F82382;
+  background-color: #fff;
+  line-height: 50px;
+  padding-left: 20px;
 }
 .cart_goodscontent .iconfont{
   position: absolute;
   font-size: 38px;
   top: 7px;
   left: 10px;
+}
+.cart_goodscontent .cart_goodscontent_newprice{
+  color: #F2270C;
+  font-weight: 700;
+  font-size: 28px;
+}
+.cart_goodscontent .cart_goodscontent_oldprice{
+  color: #b5b5b5;
+  font-size: 12px;
+}
+.cart_goodscontent .cart_goodscontent_title{
+  color:#262626;
+  font-weight: 700;
+  line-height: 21px;
+  font-size: 16px;  
+}
+.cart_footer{
+  width: 100%;
+  position: fixed;
+  bottom: 120px;
+  /* background-color: red; */
+}
+.cart_footer .cart_footer_icon{
+  display: flex;
+  text-align: center;
+}
+.cart_footer .cart_footer_icon .iconfont{
+  font-size: 16px;
+  flex:1;
+}
+.cart_footer .cart_footer_func{
+  width: 100%;
+  justify-content: space-between;
+  position: relative;
+}
+.cart_footer .cart_footer_func .cart_footer_func_b1{
+  width: 116px;
+  position: absolute;
+  line-height: 38px;
+  height: 38px;
+  background-color: red;
+  border-radius: 21px;
+  margin: 10px 0 0 40px;
+  text-align: center  ;
+  color:#fff
+}
+.cart_footer .cart_footer_func .cart_footer_func_b2{  
+  width: 116px;
+  position: absolute;
+  line-height: 38px;
+  height: 38px;
+  background-color: red;
+  border-radius: 21px;
+  margin-top: 10px;
+  margin-left: 220px;
+  text-align: center  ;
+  color:#fff
 }

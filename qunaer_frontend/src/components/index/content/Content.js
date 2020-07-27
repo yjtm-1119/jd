@@ -2,8 +2,7 @@ import './Content.css';
 import React, { useEffect, useCallback } from 'react'
 import Swiper from 'swiper/bundle'
 import 'swiper/swiper-bundle.cjs';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Supermarket1 from './routes/Supermaeket1';
+import {Link } from 'react-router-dom';
 const contentAppTitles = [
   [{
     id: 1,
@@ -110,6 +109,7 @@ const contentAppTitles = [
   ]
 
 ]
+
 function Content(props) {
   useEffect(() => {
     new Swiper('.icon', {
@@ -139,11 +139,12 @@ function Content(props) {
                           onClick={ToNewPage}
                         >
                           {/* <Link to="/index/:pagename"> */}
-                          <Link to="/index/supermarket1" replace >
+                          <Link to="/index/supermarket" replace >
                             <img src={item.url} alt="" />
                             <p>{item.title}</p>
+                            
                           </Link>
-                          <Route path="/index/supermarket1" component={Supermarket1}></Route>
+                          {/* <Route path="/index/supermarket1" component={Supermarket1}></Route> */}
                         </div>
                       )
                     })

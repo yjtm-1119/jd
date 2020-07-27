@@ -1,6 +1,5 @@
 import React from 'react';
 import './Header.css';
-import AdvSwiper from '../swiper/Swiper';
 const titles = ['首页', '手机', "电脑", "运动", "生鲜", "童装", "女装"]
 function Header() {
   return (

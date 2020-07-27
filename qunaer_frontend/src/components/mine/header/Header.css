@@ -1,5 +1,5 @@
 .mine_wrapper1{
-  height: 180px;
+  height: 160px;
   background-color: #EC3E3D;
 }
 .mine_header{
@@ -64,6 +64,7 @@
   margin-right: 10px;
 }
 .mine_details div span{
+  width: 100%;
   margin-top: 20px;
 }
 .mine_details div p{
@@ -89,6 +90,8 @@
   font-size: 16px;
 }
 .mine_vip div p{
+  height: 30px;
+  line-height: 30px;
   color:#A1B1CB;
   font-size: 12px;
 }
