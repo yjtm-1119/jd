@@ -16,7 +16,6 @@ export const Tab = styled.div`
     font-size:14px;
     img{
           width:100%;
-
         }
     &.selected{
       span{

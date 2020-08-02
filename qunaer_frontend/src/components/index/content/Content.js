@@ -107,10 +107,9 @@ const contentAppTitles = [
       title: '全部'
     },
   ]
-
 ]
-
 function Content(props) {
+  console.log(props);
   useEffect(() => {
     new Swiper('.icon', {
       pagination: {
@@ -138,7 +137,6 @@ function Content(props) {
                         <div key={item.id} className="index_content_item"
                           onClick={ToNewPage}
                         >
-                          {/* <Link to="/index/:pagename"> */}
                           <Link to="/index/supermarket" replace >
                             <img src={item.url} alt="" />
                             <p>{item.title}</p>
@@ -156,7 +154,6 @@ function Content(props) {
         </div>
       </div>
       <div className="swiper-pagination2"></div>
-
     </div>
   );
 }

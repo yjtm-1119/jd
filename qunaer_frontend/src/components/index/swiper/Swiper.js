@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Swiper from 'swiper/bundle'
-import './Swiper.css'
-import 'swiper/swiper-bundle.cjs';
+import './Swiper.css';
+import 'swiper/swiper-bundle.min.css';
 
 var swiperPics = [
   {
