@@ -1,4 +1,4 @@
-import React, { useEffect, useState, memo } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link, withRouter } from 'react-router-dom';
 // import { connect } from 'react-redux';
@@ -79,12 +79,17 @@ function Fyrecommend(props) {
     fetch('http://localhost/index/fylist')
       .then(data => data.json())
       .then(data => {
+        console.log(data.fylist)
         setfylist(data.fylist)
       })
   }, [])
+
   const enterDetail = (id) => {
-    console.log(props)
-    props.history.push(`/index/goodsdetails/${id}`)
+    // console.log(props);
+    // console.log(fylist[id - 1])
+    // let obj1 = fylist[id - 1];
+    localStorage.setItem(`goodsId${id}`, JSON.stringify(fylist[id - 1]));// 把点击的商品对应信息存储到localstorage
+    props.history.push(`/index/goodsdetails/${id}`);
   }
   return (
     < FyList >
@@ -102,7 +107,7 @@ function Fyrecommend(props) {
               // >
               <div className="index-fylist-good" onClick={() => enterDetail(item.id)} key={index}>
                 <i className="iconfont iconfont3">&#xe62b;</i>
-                <img src={item.goodsimg} alt="" width={165} height={165}></img>
+                <img src={item.goodsimg[0]} alt="" width={165} height={165}></img>
                 <p>{item.content}</p>
                 <span>{item.price}</span>
                 <i className="iconfont iconfont4">&#xe664;</i>

@@ -1,0 +1,74 @@
+.style_cartlistItem{
+    /* padding-top: 5px;
+    padding-bottom: 5px; */
+    background-color: #F2F3F4;
+    
+}
+.shopList  .style_shopImg .style_shopImgShow  img{
+    width: 100px;
+    margin: 10px;
+}
+
+.shopList li{
+    background-color: #fff;
+    margin-top: 9px;
+    margin-bottom: 5px;
+    display: flex;
+    width: 100%;
+    height: 130px;
+    border-radius: 15px;
+}
+.shopList li  input{
+    margin-top: 50px;
+}
+.style_shopTitle{
+    margin-top: 10px;
+    font-size: 15px;
+}
+.style_shopPrice span{
+   color: red;
+   height: 20px;
+}
+
+.style_shopPrice {
+   display: flex;
+}
+
+.style_shopPrice .style_shopSelect input{
+    width: 30px;
+    /* height: 20px; */
+    text-align: center;
+    border:0;
+    
+}
+.style_sum{
+    display: flex;
+    line-height: 45px;
+    position: fixed;
+    bottom: 50px;
+    z-index: 999;
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+}
+.style_sum input{
+   margin-top: 15px;
+}
+.style_totalPrice{
+    width: 100px;
+    margin-left: 100px;
+    margin-right: 0px
+    ;
+}
+.jiesuan{
+    background-color:red;
+    text-align: center;
+     line-height: 38px;
+    color: #fff;
+    display: block;
+    height: 38px;
+    width: 100px;
+    margin-left: 30px;
+    margin-top: 5px;
+    border-radius: 10px;
+}

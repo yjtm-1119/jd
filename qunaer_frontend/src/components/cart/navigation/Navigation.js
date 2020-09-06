@@ -11,6 +11,7 @@ function  Navigation(){
         <div className="navigation">
          <div className="cart_tab_nav">
           <ul>
+            
              <li><NavLink to="/cart/all" activeClassName="selected">全部</NavLink></li>
              <li><NavLink to="/cart/jiangjia" activeClassName="selected">降价</NavLink></li>
              <li><NavLink to="/cart/changmai" activeClassName="selected">常买</NavLink></li>
@@ -18,13 +19,13 @@ function  Navigation(){
           </ul>
          </div>
          {/* <div className="cart_list"> */}
-            {/* <div className="cart_list_goods">
-                
+            <div className="cart_list_goods">
+                {/* <Route path="/cart"  component={All}/> */}
                 <Route path="/cart/all"  component={All}/>
                 <Route path="/cart/jiangjia"  component={Jiangjia}/>
                 <Route path="/cart/changmai"  component={Changmai}/>
                 <Route path="/cart/fenlei"  component={Feilei}/>
-            </div>     */}
+            </div>    
         {/* </div>    */}
         </div> 
     )

@@ -2,7 +2,7 @@ import './Content.css';
 import React, { useEffect, useCallback } from 'react'
 import Swiper from 'swiper/bundle'
 import 'swiper/swiper-bundle.cjs';
-import {Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 const contentAppTitles = [
   [{
     id: 1,
@@ -109,7 +109,7 @@ const contentAppTitles = [
   ]
 ]
 function Content(props) {
-  console.log(props);
+  // console.log(props);
   useEffect(() => {
     new Swiper('.icon', {
       pagination: {
@@ -119,10 +119,11 @@ function Content(props) {
       loop: true,
     });
   }, [])
-  const ToNewPage = useCallback(() => {
-    // dispatch(push("/path/newpath'", {Supermarket1}));
+  const ToNewPage = () => {
     console.log(1111)
-  }, [])
+    props.history.push('/index/supermarket');
+    
+  }
   return (
     <div className="index_content">
       <div className="swiper-container icon">
@@ -135,13 +136,13 @@ function Content(props) {
                     Item.map((item) => {
                       return (
                         <div key={item.id} className="index_content_item"
-                          onClick={ToNewPage}
+                          onClick={() => ToNewPage()}
                         >
-                          <Link to="/index/supermarket" replace >
-                            <img src={item.url} alt="" />
-                            <p>{item.title}</p>
-                            
-                          </Link>
+                          {/* <Link to="/index/supermarket" replace > */}
+                          <img src={item.url} alt="" />
+                          <p>{item.title}</p>
+
+                          {/* </Link> */}
                           {/* <Route path="/index/supermarket1" component={Supermarket1}></Route> */}
                         </div>
                       )
@@ -158,4 +159,4 @@ function Content(props) {
   );
 }
 
-export default Content;
+export default withRouter(Content);

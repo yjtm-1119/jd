@@ -4,5 +4,4 @@ module.exports = {
   'GET /sort/international': require('./sort/international.json'),
   'GET /find/shoplist': require('./find/shoplist.json'),
   'GET /index/fylist': require('./index/fylist.json')
-
 }

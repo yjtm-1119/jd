@@ -40,11 +40,11 @@ export default [{
           component: SuspenseComponent(Index),
           routes: [
             {
-              path: '/index/goodsdetail/:id',
+              path: '/index/goodsdetails/:id',
               component: SuspenseComponent(Goodsdetail),
             },
             {
-              path: '/index/supermarket',
+              path: '/index/supermarket/:id',
               component: SuspenseComponent(Supermarket1),
             },
           ]
@@ -91,6 +91,14 @@ export default [{
         }
       ]
     },
+    // {
+    //   path: '/index/goodsdetail/:id',
+    //   component: SuspenseComponent(Goodsdetail),
+    // },
+    // {
+    //   path: '/index/supermarket',
+    //   component: SuspenseComponent(Supermarket1),
+    // },
 
   ]
 }]
