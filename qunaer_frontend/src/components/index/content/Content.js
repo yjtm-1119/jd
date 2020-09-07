@@ -1,8 +1,8 @@
 import './Content.css';
-import React, { useEffect, useCallback } from 'react'
+import React, { useEffect } from 'react'
 import Swiper from 'swiper/bundle'
 import 'swiper/swiper-bundle.cjs';
-import { Link, withRouter } from 'react-router-dom';
+import {  withRouter } from 'react-router-dom';
 const contentAppTitles = [
   [{
     id: 1,

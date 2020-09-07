@@ -41,7 +41,7 @@ function All(props) {
 
 
     var every = list.every((item, index) => {
-      return item.checked == true;
+      return item.checked === true;
     })
 
     // 单选框中如果有一个是 checked的是true就可以
@@ -105,7 +105,7 @@ function All(props) {
   const { dataList } = props
   useEffect(() => {
     setDatalist(dataList)
-  }, [])
+  }, [dataList])
   return (
     <>
       <div className="style_cartlistItem">
@@ -115,7 +115,7 @@ function All(props) {
 
               return (
                 <li key={index}>
-                  <input type="checkbox" className="style.checkbtn + ' ' + style.UnChecked" ref={myText} onChange={() => { handleChange(index) }} checked={item.checked} value="" />
+                  <input type="checkbox" readOnly={true} className="style.checkbtn + ' ' + style.UnChecked" ref={myText} onChange={() => { handleChange(index) }} checked={item.checked} value="" />
                   <div className="style_shopImg">
                     <div className="style_shopImgShow">
                       <img src={item.mainImg} alt="" />
@@ -125,10 +125,9 @@ function All(props) {
                     <div className="style_shopTitle">{item.content}</div>
                     <div className="style_shopPrice">
                       <span>￥{item.newPrice}</span>
-
                       <div className="style_shopSelect">
                         <button className="style_minus" onClick={() => { handleMinus(index) }}>-</button>
-                        <input type="text" value={datalist[index].count || ''} />
+                        <input readOnly={true} type="text" value={datalist[index].count || ''} />
                         <button className="style_add" onClick={() => { handleAdd(index) }}>+</button>
                       </div>
                     </div>
@@ -136,17 +135,12 @@ function All(props) {
 
                 </li>
               )
-
-
             })
-
           }
-
         </ul>
       </div>
-
       <div className="style_sum">
-        <input type="checkbox" onChange={() => { handleAll() }} checked={all} value="" />
+        <input  readOnly={true} type="checkbox" onChange={() => { handleAll() }} checked={all} value="" />
         <div className="style_totalPrice">
           <span >合计</span>
           <span>￥{sumprice}</span>
@@ -156,10 +150,7 @@ function All(props) {
         </div>
       </div>
     </>
-
   );
-
-
 }
 const mapStateToProps = (state) => {
   return {

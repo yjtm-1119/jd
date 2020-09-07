@@ -5,7 +5,7 @@ import './Goodsdetail.css';
 import GoodsHeader from './goodsheader/GoodsHeader';
 import { connect } from 'react-redux';
 import * as actionTypes from '../../../store/actionCreators';
-import { Space, Modal } from 'antd';
+// import { Space, Modal } from 'antd';
 
 // import GoodsContent from './goodscontent/GoodsContent';
 
@@ -47,15 +47,17 @@ function Goodsdetail(props) {
       },
     })
   })
-  const info = () => {
-    // console.log(datalist);
-    // console.log(urlData)
-    // for (let i = 0; i < datalist.length; i++) {
-    //   if (datalist[i].id === urlData.id) {
-    //     message.success('已经添加到购物车了');
-    //   }
-    // }
-    // alert('已经加入到购物车了')
+  const handleAddToCart = () => {
+    for (let i = 0; i < datalist.length; i++) {
+      if (datalist[i].id === urlData.id) {
+        return
+      }
+    }
+    handleClickAddGoods(urlData)
+  }
+  const handleGoToCart = () => {
+    handleAddToCart()
+    props.history.push('/cart/all');
   }
   return (
     <div className="goodsDetails_wrapper">
@@ -90,17 +92,8 @@ function Goodsdetail(props) {
           <i className="iconfont">&#xe605;购物车</i>
         </div>
         <div className="goodsDetails_footer_func">
-          <div className="goodsDetails_footer_func_b1" onClick={() => {
-            // console.log(datalist);
-            // console.log(urlData)
-            for (let i = 0; i < datalist.length; i++) {
-              if (datalist[i].id === urlData.id) {
-                return 
-              }
-            }
-            handleClickAddGoods(urlData)
-          }}>加入购物车</div>
-          <div className="goodsDetails_footer_func_b2">立即购买</div>
+          <div className="goodsDetails_footer_func_b1" onClick={handleAddToCart}>加入购物车</div>
+          <div className="goodsDetails_footer_func_b2" onClick={handleGoToCart}>立即购买</div>
         </div>
       </div>
     </div>
