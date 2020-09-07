@@ -109,7 +109,7 @@ function Fyrecommend(props) {
                 <i className="iconfont iconfont3">&#xe62b;</i>
                 <img src={item.goodsimg[0]} alt="" width={165} height={165}></img>
                 <p>{item.content}</p>
-                <span>{item.price}</span>
+                <span>￥{item.newPrice}</span>
                 <i className="iconfont iconfont4">&#xe664;</i>
               </div>
               // </Link>

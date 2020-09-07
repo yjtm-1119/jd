@@ -3,6 +3,10 @@ import Swiper from 'swiper/bundle'
 import 'swiper/swiper-bundle.cjs';
 import './Goodsdetail.css';
 import GoodsHeader from './goodsheader/GoodsHeader';
+import { connect } from 'react-redux';
+import * as actionTypes from '../../../store/actionCreators';
+import { Space, Modal } from 'antd';
+
 // import GoodsContent from './goodscontent/GoodsContent';
 
 // const goodsDetails = [
@@ -19,7 +23,7 @@ import GoodsHeader from './goodsheader/GoodsHeader';
 //     ]
 //   }
 // ]
-function Goodsdetail() {
+function Goodsdetail(props) {
   // console.log(111111111)
   let urlLength = window.location.href.length;
   // console.log(window.location.href.charAt(urlLength - 1))
@@ -28,7 +32,7 @@ function Goodsdetail() {
   let urlData = JSON.parse(localStorage.getItem(`goodsId${urlId}`));
   console.log(urlData)
   const [goodsDetails, setGoodsDetails] = useState(urlData)
-
+  const { handleClickAddGoods, datalist } = props;
   useEffect(() => {
     new Swiper('.goodsDetails', {
       loop: true,
@@ -43,7 +47,16 @@ function Goodsdetail() {
       },
     })
   })
-
+  const info = () => {
+    // console.log(datalist);
+    // console.log(urlData)
+    // for (let i = 0; i < datalist.length; i++) {
+    //   if (datalist[i].id === urlData.id) {
+    //     message.success('已经添加到购物车了');
+    //   }
+    // }
+    // alert('已经加入到购物车了')
+  }
   return (
     <div className="goodsDetails_wrapper">
       <GoodsHeader />
@@ -64,8 +77,8 @@ function Goodsdetail() {
       {/* <GoodsContent /> */}
       <div className="goodsDetails_goodscontent">
         {/* <i className="iconfont">&#xe64a;</i> */}
-        <span className="goodsDetails_goodscontent_newprice">{goodsDetails.newPrice}</span>
-        <s className="goodsDetails_goodscontent_oldprice">{goodsDetails.oldPrice}</s>
+        <span className="goodsDetails_goodscontent_newprice">￥{goodsDetails.newPrice}</span>
+        <s className="goodsDetails_goodscontent_oldprice">￥{goodsDetails.oldPrice}</s>
         <h4 className="goodsDetails_goodscontent_title">
           {goodsDetails.content}
         </h4>
@@ -77,13 +90,34 @@ function Goodsdetail() {
           <i className="iconfont">&#xe605;购物车</i>
         </div>
         <div className="goodsDetails_footer_func">
-          <div className="goodsDetails_footer_func_b1">加入购物车</div>
+          <div className="goodsDetails_footer_func_b1" onClick={() => {
+            // console.log(datalist);
+            // console.log(urlData)
+            for (let i = 0; i < datalist.length; i++) {
+              if (datalist[i].id === urlData.id) {
+                return 
+              }
+            }
+            handleClickAddGoods(urlData)
+          }}>加入购物车</div>
           <div className="goodsDetails_footer_func_b2">立即购买</div>
         </div>
       </div>
     </div>
 
+
   );
 }
-
-export default Goodsdetail;
+const mapStateToProps = (state) => {
+  return {
+    datalist: state.list
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleClickAddGoods(obj) {
+      dispatch(actionTypes.addGoodsAction(obj))
+    }
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Goodsdetail);
