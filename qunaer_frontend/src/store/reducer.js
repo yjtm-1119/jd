@@ -1,4 +1,4 @@
-import { ADD_GOODS } from './actionTypes';
+import { ADD_GOODS,PAY_MONEY } from './actionTypes';
 const defaultState = {
   list: [
     // {
@@ -25,6 +25,10 @@ export default (state = defaultState, action) => {
       state.list.push(action.obj)
       return {
         list: state.list
+      }
+    case PAY_MONEY:
+      return {
+        list:[]
       }
     default:
       return state

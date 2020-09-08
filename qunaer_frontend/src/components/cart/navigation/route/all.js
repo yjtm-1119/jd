@@ -1,7 +1,7 @@
-import React, { useState, useRef,useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { connect } from 'react-redux';
 import './router.css'
-
+import * as actionTypes from '../../../../store/actionCreators';
 function All(props) {
   // state = {
   // datalist: [
@@ -91,6 +91,11 @@ function All(props) {
     var sum = 0
     var count = 0;
     var list = [...datalist]
+    if (list.length === 0) {
+      // console.log(11111111111)
+      setSumprice(0)
+      return
+    }
     for (var i = 0; i < list.length; i++) {
       if (list[i].checked === true) {
         console.log(list);
@@ -101,8 +106,12 @@ function All(props) {
     setSumprice(sum);
     setSumcount(count);
   }
-
-  const { dataList } = props
+  const handlePay = () => {
+    handleClickPay()
+    SumPrice()
+    return
+  }
+  const { dataList, handleClickPay } = props
   useEffect(() => {
     setDatalist(dataList)
   }, [dataList])
@@ -140,12 +149,12 @@ function All(props) {
         </ul>
       </div>
       <div className="style_sum">
-        <input  readOnly={true} type="checkbox" onChange={() => { handleAll() }} checked={all} value="" />
+        <input readOnly={true} type="checkbox" onChange={() => { handleAll() }} checked={all} value="" />
         <div className="style_totalPrice">
           <span >合计</span>
           <span>￥{sumprice}</span>
         </div>
-        <div className="jiesuan" >结算
+        <div className="jiesuan" onClick={() => { handlePay() }}>结算
                   <span>({sumcount})</span>
         </div>
       </div>
@@ -159,7 +168,9 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-
+    handleClickPay() {
+      dispatch(actionTypes.payMoney())
+    }
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(All);

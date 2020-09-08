@@ -97,8 +97,6 @@ function Goodsdetail(props) {
         </div>
       </div>
     </div>
-
-
   );
 }
 const mapStateToProps = (state) => {
