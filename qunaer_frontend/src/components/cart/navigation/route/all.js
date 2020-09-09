@@ -36,7 +36,7 @@ function All(props) {
 
   const handleChange = (index) => {
 
-    var list = [...datalist]
+    var list = [...dataList]
     list[index].checked = !list[index].checked
 
 
@@ -56,7 +56,7 @@ function All(props) {
 
   // 全选
   const handleAll = () => {
-    var list = [...datalist]
+    var list = [...dataList]
     var all = all
     all = !all //onchange事件发生，就是对当前的状态进行取反
     for (var i = 0; i < list.length; i++) {
@@ -70,7 +70,7 @@ function All(props) {
 
   const handleAdd = (index) => {
     // 设定的value= {datalist[index].count}
-    var list = [...datalist]
+    var list = [...dataList]
     list[index].count++;
 
     setDatalist(list)
@@ -80,7 +80,7 @@ function All(props) {
 
   const handleMinus = (index) => {
     // 设定的value= {datalist[index].count}
-    var list = [...datalist];
+    var list = [...dataList];
     list[index].count--
     list[index].count = list[index].count < 1 ? 1 : list[index].count;
     setDatalist(list)
@@ -90,15 +90,14 @@ function All(props) {
   const SumPrice = () => {
     var sum = 0
     var count = 0;
-    var list = [...datalist]
+    var list = [...dataList]
     if (list.length === 0) {
-      // console.log(11111111111)
       setSumprice(0)
+      setSumcount(0)
       return
     }
     for (var i = 0; i < list.length; i++) {
       if (list[i].checked === true) {
-        console.log(list);
         sum += list[i].newPrice * list[i].count
         count += list[i].count
       }
@@ -108,12 +107,12 @@ function All(props) {
   }
   const handlePay = () => {
     handleClickPay()
-    SumPrice()
     return
   }
   const { dataList, handleClickPay } = props
   useEffect(() => {
     setDatalist(dataList)
+    SumPrice()
   }, [dataList])
   return (
     <>
